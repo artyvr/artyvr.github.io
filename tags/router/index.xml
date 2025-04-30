@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Router on artyvr.ru</title><link>https://artyvr.ru/tags/router/</link><description>Recent content in Router on artyvr.ru</description><generator>Hugo</generator><language>ru-ru</language><lastBuildDate>Sat, 26 Apr 2025 18:00:00 +0100</lastBuildDate><atom:link href="https://artyvr.ru/tags/router/index.xml" rel="self" type="application/rss+xml"/><item><title>Простоя конфигурация Cisco</title><link>https://artyvr.ru/posts/cisco_router_main_config/</link><pubDate>Sat, 26 Apr 2025 18:00:00 +0100</pubDate><guid>https://artyvr.ru/posts/cisco_router_main_config/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>enable
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>write erase
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>reload
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>enable
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>conf t
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>service password-encryption
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>aaa new-model
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>aaa authentication login default local
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>username USER privilege &lt;span style="color:#ae81ff">15&lt;/span> secret PWD
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>conf t
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>hostname R1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>conf t
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>interface Fa &lt;span style="color:#ae81ff">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip address xxx.xxx.xxx.xx2 255.xxx.xxx.xxx
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> либо ip address dhcp
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>no shutdown
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>conf t
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>interface Vlan &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Ip address 192.168.0.1 255.255.255.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>no shutdown
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip route 0.0.0.0 0.0.0.0 xxx.xxx.xxx.xx1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip dhcp pool LAN
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>network 192.168.0.0 255.255.255.0
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dns-server 192.168.0.1 8.8.8.8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>default-router 192.168.0.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>exit
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip dhcp excluded-address 192.168.0.1 192.168.0.100
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip domain-lookup
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip dns server
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip name-server 192.168.2.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip name-server 8.8.8.8
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip access-list standard ACL_NAT
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>permit 192.168.0.0 0.0.0.255
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Interface Vlan &lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip nat inside
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Interface Fa &lt;span style="color:#ae81ff">4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip nat outside
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ip nat inside source list ACL_NAT interface fa4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>write
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>

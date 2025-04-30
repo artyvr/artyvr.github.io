@@ -1,0 +1,63 @@
+<!doctype html><html><head lang=ru><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Windows 10 QEMU - artyvr.ru</title><meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="Запустить Windows 10 в QEMU"><meta property="og:image" content><meta property="og:url" content="https://artyvr.ru/posts/windows_10_in_qemu/"><meta property="og:site_name" content="artyvr.ru"><meta property="og:title" content="Windows 10 QEMU"><meta property="og:description" content="Запустить Windows 10 в QEMU"><meta property="og:locale" content="ru_ru"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-04-20T18:27:00+01:00"><meta property="article:modified_time" content="2025-04-20T18:27:00+01:00"><meta property="article:tag" content="Qemu"><meta name=twitter:card content="summary"><meta name=twitter:title content="Windows 10 QEMU"><meta name=twitter:description content="Запустить Windows 10 в QEMU"><link href=https://artyvr.ru/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://artyvr.ru/css/main.6a0f23ea50fd34b46fee262a5a68e17d458c51a2bc99ba1ba018065de6b180c3.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://artyvr.ru/css/dark.50b57e12d401420df23965fed157368aba37b76df0ecefd0b1ecd4da664f01a0.css disabled><script type=text/javascript src=https://artyvr.ru/js/MathJax.js></script><script type=text/x-mathjax-config>
+		MathJax.Hub.Config({
+			tex2jax: {
+				inlineMath: [['$','$'], ['\\(','\\)']],
+				displayMath: [['$$','$$'], ['\[','\]']],
+				processEscapes: true,
+				processEnvironments: true,
+				skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+				TeX: { equationNumbers: { autoNumber: "AMS" },
+						 extensions: ["AMSmath.js", "AMSsymbols.js"] }
+			}
+		});
+		</script><link rel=stylesheet href=https://artyvr.ru/katex/katex.min.css><script defer src=https://artyvr.ru/katex/katex.min.js></script><script defer src=https://artyvr.ru/katex/auto-render.min.js onload=renderMathInElement(document.body)></script><script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body,{delimiters:[{left:"$$",right:"$$",display:!0},{left:"$",right:"$",display:!1}]})})</script></head><body><div class=content><header><div class=main><a href=https://artyvr.ru/>artyvr.ru</a></div><nav><a href=/tags>Тэги</a>
+| <span id=dark-mode-toggle onclick=toggleTheme()><svg class="feather"><use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#sun"/></svg></span>
+<script src=https://artyvr.ru/js/themetoggle.js></script></nav></header><main><article><div class=post-container><div class=post-content><div class=title><h1 class=title>Windows 10 QEMU</h1><div class=meta>Создано 20 апр. 2025 г.</div></div><section class=body><h3 id=устанавливаем-qemu>Устанавливаем QEMU</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>apt install 
+</span></span><span style=display:flex><span>или
+</span></span><span style=display:flex><span>pacman -S
+</span></span><span style=display:flex><span>или ...
+</span></span></code></pre></div><h3 id=создаем-рабочую-директорию>Создаем рабочую директорию</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>mkdir win10
+</span></span></code></pre></div><h3 id=создаем-файл-образа-системы>Создаем файл образа системы</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>qemu-img create -f qcow2 system.img 40G
+</span></span></code></pre></div><h3 id=качаем-uefi-bios-для-qemu>Качаем UEFI BIOS для QEMU</h3><p>Ссылка на репозиторий <a href=https://github.com/BlankOn/ovmf-blobs>ovmf-blobs</a></p><h3 id=качаем-драйвера>Качаем драйвера</h3><p>Ссылка <a href=https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/>virtio-win</a></p><p>Выбираем последнюю версию, файл с расширением .iso</p><h3 id=качаем-установочный-образ-windows-10>Качаем установочный образ windows 10</h3><p>&mldr;</p><h3 id=создаем-файл-запуска-установки-виртуальной-машины>Создаем файл запуска установки виртуальной машины</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>nano run_install.sh
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#!/bin/sh
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>qemu-system-x86_64 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-cpu host <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-enable-kvm <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-M q35 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-smp <span style=color:#ae81ff>4</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-m 6G <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-vga qxl <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-bios bios64.bin <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device ramfb <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device nec-usb-xhci <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device usb-kbd <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device usb-mouse <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device usb-tablet <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device virtio-blk,drive<span style=color:#f92672>=</span>system <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-drive <span style=color:#66d9ef>if</span><span style=color:#f92672>=</span>none,id<span style=color:#f92672>=</span>system,format<span style=color:#f92672>=</span>qcow2,file<span style=color:#f92672>=</span>system.img <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device usb-storage,drive<span style=color:#f92672>=</span>drivers <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-drive <span style=color:#66d9ef>if</span><span style=color:#f92672>=</span>none,id<span style=color:#f92672>=</span>drivers,media<span style=color:#f92672>=</span>cdrom,file<span style=color:#f92672>=</span>virtio-win.iso <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-drive <span style=color:#66d9ef>if</span><span style=color:#f92672>=</span>none,id<span style=color:#f92672>=</span>install,format<span style=color:#f92672>=</span>raw,media<span style=color:#f92672>=</span>cdrom,read-only<span style=color:#f92672>=</span>on,file<span style=color:#f92672>=</span>Win10_22H2_Russian_x64v1.iso <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device usb-storage,drive<span style=color:#f92672>=</span>install <span style=color:#ae81ff>\
+</span></span></span></code></pre></div><h3 id=создаем-файл-запуска-виртуальной-машины>Создаем файл запуска виртуальной машины</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>nano run.sh
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e>#!/bin/sh
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
+</span></span><span style=display:flex><span>qemu-system-x86_64 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-cpu host <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-enable-kvm <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-M q35 <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-smp <span style=color:#ae81ff>4</span> <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-m 6G <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-vga qxl <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-bios bios64.bin <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device ramfb <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device nec-usb-xhci <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device usb-kbd <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device usb-mouse <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device usb-tablet <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-device virtio-blk,drive<span style=color:#f92672>=</span>system <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>-drive <span style=color:#66d9ef>if</span><span style=color:#f92672>=</span>none,id<span style=color:#f92672>=</span>system,format<span style=color:#f92672>=</span>qcow2,file<span style=color:#f92672>=</span>system.img <span style=color:#ae81ff>\
+</span></span></span></code></pre></div></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/qemu>qemu</a></li></ul></nav></div></div><div class=toc><strong>Главы:</strong><nav id=TableOfContents><ul><li><ul><li><a href=#устанавливаем-qemu>Устанавливаем QEMU</a></li><li><a href=#создаем-рабочую-директорию>Создаем рабочую директорию</a></li><li><a href=#создаем-файл-образа-системы>Создаем файл образа системы</a></li><li><a href=#качаем-uefi-bios-для-qemu>Качаем UEFI BIOS для QEMU</a></li><li><a href=#качаем-драйвера>Качаем драйвера</a></li><li><a href=#качаем-установочный-образ-windows-10>Качаем установочный образ windows 10</a></li><li><a href=#создаем-файл-запуска-установки-виртуальной-машины>Создаем файл запуска установки виртуальной машины</a></li><li><a href=#создаем-файл-запуска-виртуальной-машины>Создаем файл запуска виртуальной машины</a></li></ul></li></ul></nav></div></div></article></main><footer><div style=display:flex></div><div class=footer-info>2025
+<a href=https://artyvr.ru>artyvr.ru</a></a></div></footer></div></body></html>
