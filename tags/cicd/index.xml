@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Cicd on artyvr.ru</title><link>https://artyvr.ru/tags/cicd/</link><description>Recent content in Cicd on artyvr.ru</description><generator>Hugo</generator><language>ru-ru</language><lastBuildDate>Thu, 01 May 2025 18:55:00 +0100</lastBuildDate><atom:link href="https://artyvr.ru/tags/cicd/index.xml" rel="self" type="application/rss+xml"/><item><title>GITHUB Actions</title><link>https://artyvr.ru/posts/github_actions_hugo/</link><pubDate>Thu, 01 May 2025 18:55:00 +0100</pubDate><guid>https://artyvr.ru/posts/github_actions_hugo/</guid><description>&lt;h3 id="cicd-github">CI/CD github&lt;/h3>
+&lt;p>.github/workflows/deploy.yml&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>name: Deploy site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>on: push
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jobs:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> deploy:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> runs-on: ubuntu-latest
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Git checkout
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uses: actions/checkout@v4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Setup hugo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uses: peaceiris/actions-hugo@v3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> with:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hugo-version: &amp;#34;0.147.0&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Build site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> run: hugo --minify
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Deploy site
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uses: peaceiris/actions-gh-pages@v4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> with:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> external_repository: name/repo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> publish_dir: ./public
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cname: example.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
