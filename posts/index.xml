@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on artyvr.ru</title><link>https://artyvr.ru/posts/</link><description>Recent content in Posts on artyvr.ru</description><generator>Hugo</generator><language>ru-ru</language><lastBuildDate>Thu, 01 May 2025 18:55:00 +0100</lastBuildDate><atom:link href="https://artyvr.ru/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>GITHUB Actions</title><link>https://artyvr.ru/posts/github_actions_hugo/</link><pubDate>Thu, 01 May 2025 18:55:00 +0100</pubDate><guid>https://artyvr.ru/posts/github_actions_hugo/</guid><description>&lt;h3 id="github-actions-hugo-site">Github actions hugo site&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on artyvr.ru</title><link>https://artyvr.ru/posts/</link><description>Recent content in Posts on artyvr.ru</description><generator>Hugo</generator><language>ru-ru</language><lastBuildDate>Sat, 03 May 2025 09:03:00 +0100</lastBuildDate><atom:link href="https://artyvr.ru/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>UPOS</title><link>https://artyvr.ru/posts/upos/</link><pubDate>Sat, 03 May 2025 09:03:00 +0100</pubDate><guid>https://artyvr.ru/posts/upos/</guid><description>&lt;h3 id="upos">UPOS&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://artyvr.ru/upos/33.18.03_PC_STUB.zip">33.18.03_PC_STUB.zip&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://artyvr.ru/upos/33.33_PC_STUB.zip">33.33_PC_STUB.zip&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://artyvr.ru/upos/MTP_Device_Drivers.zip">MTP_Device_Drivers.zip&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>Для &lt;strong>linux&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget https://artyvr.ru/upos/33.18.03_PC_STUB.zip
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl --output 33.18.03_PC_STUB.zip https://artyvr.ru/upos/33.18.03_PC_STUB.zip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Для &lt;strong>Windows&lt;/strong>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Invoke-WebRequest https&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span>//artyvr.ru/upos/&lt;span style="color:#ae81ff">33.18&lt;/span>.03_PC_STUB.zip -OutFile &lt;span style="color:#ae81ff">33.18&lt;/span>.03_PC_STUB.zip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>GITHUB Actions</title><link>https://artyvr.ru/posts/github_actions_hugo/</link><pubDate>Thu, 01 May 2025 18:55:00 +0100</pubDate><guid>https://artyvr.ru/posts/github_actions_hugo/</guid><description>&lt;h3 id="github-actions-hugo-site">Github actions hugo site&lt;/h3>
 &lt;p>.github/workflows/deploy.yml&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>name: Deploy site
@@ -217,17 +231,6 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> pct exec $i -- bash -c &lt;span style="color:#e6db74">&amp;#34;apt-get update &amp;amp;&amp;amp; apt-get dist-upgrade -y &amp;amp;&amp;amp; apt-get autoremove &amp;amp;&amp;amp; apt-get autoclean &amp;amp;&amp;amp; apt-get install -f&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">done&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>UPOS</title><link>https://artyvr.ru/posts/upos/</link><pubDate>Sat, 29 Mar 2025 18:33:00 +0100</pubDate><guid>https://artyvr.ru/posts/upos/</guid><description>&lt;h3 id="upos">UPOS&lt;/h3>
-&lt;p>&lt;a href="https://artyvr.ru/upos/33.18.03_PC_STUB.zip">33.18.03_PC_STUB.zip&lt;/a>
-&lt;a href="https://artyvr.ru/upos/33.33_PC_STUB.zip">33.33_PC_STUB.zip&lt;/a>&lt;/p>
-&lt;p>Для &lt;strong>linux&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget https://artyvr.ru/upos/33.18.03_PC_STUB.zip
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl --output 33.18.03_PC_STUB.zip https://artyvr.ru/upos/33.18.03_PC_STUB.zip
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Для &lt;strong>Windows&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Invoke-WebRequest https&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span>//artyvr.ru/upos/&lt;span style="color:#ae81ff">33.18&lt;/span>.03_PC_STUB.zip -OutFile &lt;span style="color:#ae81ff">33.18&lt;/span>.03_PC_STUB.zip
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Готовим свинину</title><link>https://artyvr.ru/posts/stewed_pork_belly/</link><pubDate>Thu, 27 Mar 2025 18:33:00 +0100</pubDate><guid>https://artyvr.ru/posts/stewed_pork_belly/</guid><description>&lt;p>Грудинку (сало с мясом прослойками) нарезал на куски где-то 5х5 9-10 штук,
 в кастрюлю сыпешь две сталовые ложки сахара, добовляешь чуть воды - эту смесь греешь на сильном огне до светло-коричневого цвета помешивая (карамелизуешь), затем отставляешь с огня,&lt;/p>
 &lt;p>На дно кастрюли с карамелизованным сахаром, укладываешь слоями:&lt;/p>
