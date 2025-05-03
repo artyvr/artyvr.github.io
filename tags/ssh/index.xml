@@ -2,7 +2,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>nmap -sP 192.168.0.1-254
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>arp -an
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>SSH авторизация</title><link>https://artyvr.ru/posts/ssh_cert_based_auth/</link><pubDate>Sat, 19 Apr 2025 18:40:00 +0100</pubDate><guid>https://artyvr.ru/posts/ssh_cert_based_auth/</guid><description>&lt;h1 id="ssh-certificate-based-authentication">SSH Certificate-Based Authentication&lt;/h1>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>SSH авторизация</title><link>https://artyvr.ru/posts/ssh_cert_based_auth/</link><pubDate>Sat, 19 Apr 2025 18:40:00 +0100</pubDate><guid>https://artyvr.ru/posts/ssh_cert_based_auth/</guid><description>&lt;h2 id="ssh-certificate-based-authentication">SSH Certificate-Based Authentication&lt;/h2>
 &lt;h2 id="создание-сертификатов">Создание сертификатов&lt;/h2>
 &lt;p>RSA 2048:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh-keygen -t rsa
