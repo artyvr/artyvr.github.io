@@ -218,7 +218,8 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">done&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>UPOS</title><link>https://artyvr.ru/posts/upos/</link><pubDate>Sat, 29 Mar 2025 18:33:00 +0100</pubDate><guid>https://artyvr.ru/posts/upos/</guid><description>&lt;h3 id="upos">UPOS&lt;/h3>
-&lt;p>&lt;a href="https://artyvr.ru/upos/33.18.03_PC_STUB.zip">33.18.03_PC_STUB.zip&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://artyvr.ru/upos/33.18.03_PC_STUB.zip">33.18.03_PC_STUB.zip&lt;/a>
+&lt;a href="https://artyvr.ru/upos/33.33_PC_STUB.zip">33.33_PC_STUB.zip&lt;/a>&lt;/p>
 &lt;p>Для &lt;strong>linux&lt;/strong>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget https://artyvr.ru/upos/33.18.03_PC_STUB.zip
