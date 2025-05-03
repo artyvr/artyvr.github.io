@@ -42,7 +42,8 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> publish_dir: ./public
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cname: example.com
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>MacOS QEMU</title><link>https://artyvr.ru/posts/macos_in_qemu/</link><pubDate>Thu, 01 May 2025 18:01:00 +0100</pubDate><guid>https://artyvr.ru/posts/macos_in_qemu/</guid><description>&lt;h3 id="macos-qemu">MacOS QEMU&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В данном случае, собраный сайт загружается в другой репозиторий, для этого в репозиториии с исходниками, в разделе &lt;strong>Actions secrets and variables&lt;/strong>
+создаем &lt;strong>Actions Key&lt;/strong>, а в целивом репозитории содаем &lt;strong>Deploy keys&lt;/strong> с соответствующим именем.&lt;/p></description></item><item><title>MacOS QEMU</title><link>https://artyvr.ru/posts/macos_in_qemu/</link><pubDate>Thu, 01 May 2025 18:01:00 +0100</pubDate><guid>https://artyvr.ru/posts/macos_in_qemu/</guid><description>&lt;h3 id="macos-qemu">MacOS QEMU&lt;/h3>
 &lt;p>Клонируем репозиторий:
 &lt;a href="https://github.com/kholia/OSX-KVM">OSX-KVM&lt;/a>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://github.com/kholia/OSX-KVM.git

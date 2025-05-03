@@ -28,4 +28,5 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> publish_dir: ./public
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cname: example.com
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В данном случае, собраный сайт загружается в другой репозиторий, для этого в репозиториии с исходниками, в разделе &lt;strong>Actions secrets and variables&lt;/strong>
+создаем &lt;strong>Actions Key&lt;/strong>, а в целивом репозитории содаем &lt;strong>Deploy keys&lt;/strong> с соответствующим именем.&lt;/p></description></item></channel></rss>
