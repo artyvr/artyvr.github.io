@@ -2,4 +2,4 @@ Github pages repository
 
 https://artyvr.github.io
 
-https://artyvrru
+https://artyvr.ru
