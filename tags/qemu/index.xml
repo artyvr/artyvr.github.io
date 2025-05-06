@@ -3,7 +3,7 @@
 &lt;a href="https://github.com/kholia/OSX-KVM">OSX-KVM&lt;/a>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://github.com/kholia/OSX-KVM.git
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Следуем инструкциям из репозитория.&lt;/p>
-&lt;p>Для проброса usb-устройств в файл &lt;strong>OpenCore-Boot.sh&lt;/strong> добовляем строку:&lt;/p>
+&lt;p>Для проброса usb-устройств в файл &lt;strong>OpenCore-Boot.sh&lt;/strong> добавляем строку:&lt;/p>
 &lt;blockquote>
 &lt;p>-device usb-host,bus=ehci.0,vendorid=0x05ac,productid=0x12ab,guest-reset=false,id=iphone&lt;/p>&lt;/blockquote>
 &lt;p>&lt;strong>vendorid&lt;/strong> и &lt;strong>productid&lt;/strong> узнаем из вывода команды &lt;strong>lsusb&lt;/strong>&lt;/p>
@@ -73,4 +73,4 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>-device usb-tablet &lt;span style="color:#ae81ff">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>-device virtio-blk,drive&lt;span style="color:#f92672">=&lt;/span>system &lt;span style="color:#ae81ff">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>-drive &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>none,id&lt;span style="color:#f92672">=&lt;/span>system,format&lt;span style="color:#f92672">=&lt;/span>qcow2,file&lt;span style="color:#f92672">=&lt;/span>system.img &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>а ещё можно установить &lt;strong>virtio-win-guest-tools.exe&lt;/strong> отдуда же &lt;a href="https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/">virtio-win&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>а ещё можно установить &lt;strong>virtio-win-guest-tools.exe&lt;/strong> от туда же &lt;a href="https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/">virtio-win&lt;/a>&lt;/p></description></item></channel></rss>

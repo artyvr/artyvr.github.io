@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github on artyvr.ru</title><link>https://artyvr.ru/tags/github/</link><description>Recent content in Github on artyvr.ru</description><generator>Hugo</generator><language>ru-ru</language><lastBuildDate>Thu, 01 May 2025 18:55:00 +0100</lastBuildDate><atom:link href="https://artyvr.ru/tags/github/index.xml" rel="self" type="application/rss+xml"/><item><title>GITHUB Actions</title><link>https://artyvr.ru/posts/github_actions_hugo/</link><pubDate>Thu, 01 May 2025 18:55:00 +0100</pubDate><guid>https://artyvr.ru/posts/github_actions_hugo/</guid><description>&lt;h3 id="github-actions-hugo-site">Github actions hugo site&lt;/h3>
 &lt;p>.github/workflows/deploy.yml&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>name: Deploy site
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>on: push
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Deploy site&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">on&lt;/span>: &lt;span style="color:#ae81ff">push&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jobs:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> deploy:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> runs-on: ubuntu-latest
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">jobs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">deploy&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">runs-on&lt;/span>: &lt;span style="color:#ae81ff">ubuntu-latest&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">steps&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Git checkout
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uses: actions/checkout@v4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Git checkout&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">actions/checkout@v4&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Setup hugo
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uses: peaceiris/actions-hugo@v3
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> with:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hugo-version: &amp;#34;0.147.0&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Setup hugo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">peaceiris/actions-hugo@v3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">hugo-version&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;0.147.0&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Build site
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> run: hugo --minify
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Build site&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">run&lt;/span>: &lt;span style="color:#ae81ff">hugo --minify&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Deploy site
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uses: peaceiris/actions-gh-pages@v4
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> with:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> external_repository: name/repo
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> publish_dir: ./public
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cname: example.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Deploy site&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">peaceiris/actions-gh-pages@v4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">deploy_key&lt;/span>: &lt;span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">external_repository&lt;/span>: &lt;span style="color:#ae81ff">name/repo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">publish_dir&lt;/span>: &lt;span style="color:#ae81ff">./public&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">cname&lt;/span>: &lt;span style="color:#ae81ff">example.com&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В данном случае, собраный сайт загружается в другой репозиторий, для этого в репозиториии с исходниками, в разделе &lt;strong>Actions secrets and variables&lt;/strong>
-создаем &lt;strong>Actions Key&lt;/strong>, а в целивом репозитории содаем &lt;strong>Deploy keys&lt;/strong> с соответствующим именем.&lt;/p></description></item></channel></rss>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В данном случае, собранный сайт загружается в другой репозиторий, для этого в репозитории с исходниками, в разделе &lt;strong>Actions secrets and variables&lt;/strong>
+создаем &lt;strong>Actions Key&lt;/strong>, а в целевом репозитории создаем &lt;strong>Deploy keys&lt;/strong> с соответствующим именем.&lt;/p></description></item></channel></rss>

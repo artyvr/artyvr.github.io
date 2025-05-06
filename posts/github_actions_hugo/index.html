@@ -1,35 +1,35 @@
 <!doctype html><html><head lang=ru><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>GITHUB Actions - artyvr.ru</title>
 <link rel=apple-touch-icon sizes=180x180 href=/favicon/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon/favicon-16x16.png><link rel=manifest href=/favicon/site.webmanifest><link rel=mask-icon href=/favicon/safari-pinned-tab.svg color=#5bbad5><link rel="shortcut icon" href=/favicon/favicon.ico><meta name=msapplication-TileColor content="#da532c"><meta name=msapplication-config content="/favicon/browserconfig.xml"><meta name=theme-color content="#ffffff"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Deploy hugo site to github pages"><meta property="og:image" content><meta property="og:url" content="https://artyvr.ru/posts/github_actions_hugo/"><meta property="og:site_name" content="artyvr.ru"><meta property="og:title" content="GITHUB Actions"><meta property="og:description" content="Deploy hugo site to github pages"><meta property="og:locale" content="ru_ru"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-05-01T18:55:00+01:00"><meta property="article:modified_time" content="2025-05-01T18:55:00+01:00"><meta property="article:tag" content="Github"><meta property="article:tag" content="Cicd"><meta property="article:tag" content="Hugo"><meta name=twitter:card content="summary"><meta name=twitter:title content="GITHUB Actions"><meta name=twitter:description content="Deploy hugo site to github pages"><link href=https://artyvr.ru/css/fonts.2c2227b81b1970a03e760aa2e6121cd01f87c88586803cbb282aa224720a765f.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://artyvr.ru/css/main.6a0f23ea50fd34b46fee262a5a68e17d458c51a2bc99ba1ba018065de6b180c3.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://artyvr.ru/css/dark.50b57e12d401420df23965fed157368aba37b76df0ecefd0b1ecd4da664f01a0.css disabled></head><body><div class=content><header><div class=main><a href=https://artyvr.ru/>artyvr.ru</a></div><nav><a href=/tags>Тэги</a>
 | <span id=dark-mode-toggle onclick=toggleTheme()><svg class="feather"><use href="/svg/feather-sprite.51cf5647cb1987f769b616558f2620fd9423d72058490231b391bf6aa3744b55.svg#sun"/></svg></span>
-<script src=https://artyvr.ru/js/themetoggle.js></script></nav></header><main><article><div class=post-container><div class=post-content><div class=title><h1 class=title>GITHUB Actions</h1><div class=meta>Создано 1 мая 2025 г.</div></div><section class=body><h3 id=github-actions-hugo-site>Github actions hugo site</h3><p>.github/workflows/deploy.yml</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>
-</span></span><span style=display:flex><span>name: Deploy site
-</span></span><span style=display:flex><span>on: push
+<script src=https://artyvr.ru/js/themetoggle.js></script></nav></header><main><article><div class=post-container><div class=post-content><div class=title><h1 class=title>GITHUB Actions</h1><div class=meta>Создано 1 мая 2025 г.</div></div><section class=body><h3 id=github-actions-hugo-site>Github actions hugo site</h3><p>.github/workflows/deploy.yml</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yml data-lang=yml><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>name</span>: <span style=color:#ae81ff>Deploy site</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>on</span>: <span style=color:#ae81ff>push</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>jobs:
-</span></span><span style=display:flex><span>  deploy:
-</span></span><span style=display:flex><span>    runs-on: ubuntu-latest
-</span></span><span style=display:flex><span>    steps:
+</span></span><span style=display:flex><span><span style=color:#f92672>jobs</span>:
+</span></span><span style=display:flex><span>  <span style=color:#f92672>deploy</span>:
+</span></span><span style=display:flex><span>    <span style=color:#f92672>runs-on</span>: <span style=color:#ae81ff>ubuntu-latest</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>steps</span>:
 </span></span><span style=display:flex><span>      
-</span></span><span style=display:flex><span>      - name: Git checkout
-</span></span><span style=display:flex><span>        uses: actions/checkout@v4
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Git checkout</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>actions/checkout@v4</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>      - name: Setup hugo
-</span></span><span style=display:flex><span>        uses: peaceiris/actions-hugo@v3
-</span></span><span style=display:flex><span>        with:
-</span></span><span style=display:flex><span>          hugo-version: &#34;0.147.0&#34;
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Setup hugo</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>peaceiris/actions-hugo@v3</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>          <span style=color:#f92672>hugo-version</span>: <span style=color:#e6db74>&#34;0.147.0&#34;</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>      - name: Build site
-</span></span><span style=display:flex><span>        run: hugo --minify
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Build site</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>run</span>: <span style=color:#ae81ff>hugo --minify</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>      - name: Deploy site
-</span></span><span style=display:flex><span>        uses: peaceiris/actions-gh-pages@v4
-</span></span><span style=display:flex><span>        with:
-</span></span><span style=display:flex><span>           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-</span></span><span style=display:flex><span>           external_repository: name/repo
-</span></span><span style=display:flex><span>           publish_dir: ./public
-</span></span><span style=display:flex><span>           cname: example.com
+</span></span><span style=display:flex><span>      - <span style=color:#f92672>name</span>: <span style=color:#ae81ff>Deploy site</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>uses</span>: <span style=color:#ae81ff>peaceiris/actions-gh-pages@v4</span>
+</span></span><span style=display:flex><span>        <span style=color:#f92672>with</span>:
+</span></span><span style=display:flex><span>           <span style=color:#f92672>deploy_key</span>: <span style=color:#ae81ff>${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
+</span></span><span style=display:flex><span>           <span style=color:#f92672>external_repository</span>: <span style=color:#ae81ff>name/repo</span>
+</span></span><span style=display:flex><span>           <span style=color:#f92672>publish_dir</span>: <span style=color:#ae81ff>./public</span>
+</span></span><span style=display:flex><span>           <span style=color:#f92672>cname</span>: <span style=color:#ae81ff>example.com</span>
 </span></span><span style=display:flex><span>          
-</span></span></code></pre></div><p>В данном случае, собраный сайт загружается в другой репозиторий, для этого в репозиториии с исходниками, в разделе <strong>Actions secrets and variables</strong>
-создаем <strong>Actions Key</strong>, а в целивом репозитории содаем <strong>Deploy keys</strong> с соответствующим именем.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>ssh-keygen -t ed25519 -C <span style=color:#e6db74>&#34;github-actions-deploy&#34;</span> -f github-actions-deploy -N <span style=color:#e6db74>&#34;&#34;</span>
+</span></span></code></pre></div><p>В данном случае, собранный сайт загружается в другой репозиторий, для этого в репозитории с исходниками, в разделе <strong>Actions secrets and variables</strong>
+создаем <strong>Actions Key</strong>, а в целевом репозитории создаем <strong>Deploy keys</strong> с соответствующим именем.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>ssh-keygen -t ed25519 -C <span style=color:#e6db74>&#34;github-actions-deploy&#34;</span> -f github-actions-deploy -N <span style=color:#e6db74>&#34;&#34;</span>
 </span></span></code></pre></div></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/github>github</a></li><li><a href=/tags/cicd>cicd</a></li><li><a href=/tags/hugo>hugo</a></li></ul></nav></div></div></article></main><footer><div style=display:flex></div><div class=footer-info>2025
 <a href=https://artyvr.ru>artyvr.ru</a></a></div></footer></div></body></html>

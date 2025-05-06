@@ -57,7 +57,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl --output 33.18.03_PC_STUB.zip https://artyvr.ru/upos/33.18.03_PC_STUB.zip
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Для &lt;strong>Windows&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-powershell" data-lang="powershell">&lt;span style="display:flex;">&lt;span>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-pwsh" data-lang="pwsh">&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Invoke-WebRequest https&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span>//artyvr.ru/upos/&lt;span style="color:#ae81ff">33.18&lt;/span>.03_PC_STUB.zip -OutFile &lt;span style="color:#ae81ff">33.18&lt;/span>.03_PC_STUB.zip
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Delete old files</title><link>https://artyvr.ru/posts/delete_old_files/</link><pubDate>Fri, 02 May 2025 21:01:00 +0100</pubDate><guid>https://artyvr.ru/posts/delete_old_files/</guid><description>&lt;h2 id="удаление-старых-логов">Удаление старых логов&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/usr/bin/env bash
@@ -68,41 +68,41 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>exit &lt;span style="color:#ae81ff">0&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>GITHUB Actions</title><link>https://artyvr.ru/posts/github_actions_hugo/</link><pubDate>Thu, 01 May 2025 18:55:00 +0100</pubDate><guid>https://artyvr.ru/posts/github_actions_hugo/</guid><description>&lt;h3 id="github-actions-hugo-site">Github actions hugo site&lt;/h3>
 &lt;p>.github/workflows/deploy.yml&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>name: Deploy site
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>on: push
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yml" data-lang="yml">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Deploy site&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">on&lt;/span>: &lt;span style="color:#ae81ff">push&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>jobs:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> deploy:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> runs-on: ubuntu-latest
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> steps:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">jobs&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">deploy&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">runs-on&lt;/span>: &lt;span style="color:#ae81ff">ubuntu-latest&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">steps&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Git checkout
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uses: actions/checkout@v4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Git checkout&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">actions/checkout@v4&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Setup hugo
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uses: peaceiris/actions-hugo@v3
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> with:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> hugo-version: &amp;#34;0.147.0&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Setup hugo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">peaceiris/actions-hugo@v3&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">hugo-version&lt;/span>: &lt;span style="color:#e6db74">&amp;#34;0.147.0&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Build site
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> run: hugo --minify
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Build site&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">run&lt;/span>: &lt;span style="color:#ae81ff">hugo --minify&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: Deploy site
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> uses: peaceiris/actions-gh-pages@v4
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> with:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> external_repository: name/repo
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> publish_dir: ./public
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cname: example.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">Deploy site&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">uses&lt;/span>: &lt;span style="color:#ae81ff">peaceiris/actions-gh-pages@v4&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">with&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">deploy_key&lt;/span>: &lt;span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">external_repository&lt;/span>: &lt;span style="color:#ae81ff">name/repo&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">publish_dir&lt;/span>: &lt;span style="color:#ae81ff">./public&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">cname&lt;/span>: &lt;span style="color:#ae81ff">example.com&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> 
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В данном случае, собраный сайт загружается в другой репозиторий, для этого в репозиториии с исходниками, в разделе &lt;strong>Actions secrets and variables&lt;/strong>
-создаем &lt;strong>Actions Key&lt;/strong>, а в целивом репозитории содаем &lt;strong>Deploy keys&lt;/strong> с соответствующим именем.&lt;/p></description></item><item><title>MacOS QEMU</title><link>https://artyvr.ru/posts/macos_in_qemu/</link><pubDate>Thu, 01 May 2025 18:01:00 +0100</pubDate><guid>https://artyvr.ru/posts/macos_in_qemu/</guid><description>&lt;h3 id="macos-qemu">MacOS QEMU&lt;/h3>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>В данном случае, собранный сайт загружается в другой репозиторий, для этого в репозитории с исходниками, в разделе &lt;strong>Actions secrets and variables&lt;/strong>
+создаем &lt;strong>Actions Key&lt;/strong>, а в целевом репозитории создаем &lt;strong>Deploy keys&lt;/strong> с соответствующим именем.&lt;/p></description></item><item><title>MacOS QEMU</title><link>https://artyvr.ru/posts/macos_in_qemu/</link><pubDate>Thu, 01 May 2025 18:01:00 +0100</pubDate><guid>https://artyvr.ru/posts/macos_in_qemu/</guid><description>&lt;h3 id="macos-qemu">MacOS QEMU&lt;/h3>
 &lt;p>Клонируем репозиторий:
 &lt;a href="https://github.com/kholia/OSX-KVM">OSX-KVM&lt;/a>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>git clone https://github.com/kholia/OSX-KVM.git
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Следуем инструкциям из репозитория.&lt;/p>
-&lt;p>Для проброса usb-устройств в файл &lt;strong>OpenCore-Boot.sh&lt;/strong> добовляем строку:&lt;/p>
+&lt;p>Для проброса usb-устройств в файл &lt;strong>OpenCore-Boot.sh&lt;/strong> добавляем строку:&lt;/p>
 &lt;blockquote>
 &lt;p>-device usb-host,bus=ehci.0,vendorid=0x05ac,productid=0x12ab,guest-reset=false,id=iphone&lt;/p>&lt;/blockquote>
 &lt;p>&lt;strong>vendorid&lt;/strong> и &lt;strong>productid&lt;/strong> узнаем из вывода команды &lt;strong>lsusb&lt;/strong>&lt;/p>
@@ -253,7 +253,7 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>-device usb-tablet &lt;span style="color:#ae81ff">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>-device virtio-blk,drive&lt;span style="color:#f92672">=&lt;/span>system &lt;span style="color:#ae81ff">\
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ae81ff">&lt;/span>-drive &lt;span style="color:#66d9ef">if&lt;/span>&lt;span style="color:#f92672">=&lt;/span>none,id&lt;span style="color:#f92672">=&lt;/span>system,format&lt;span style="color:#f92672">=&lt;/span>qcow2,file&lt;span style="color:#f92672">=&lt;/span>system.img &lt;span style="color:#ae81ff">\
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>а ещё можно установить &lt;strong>virtio-win-guest-tools.exe&lt;/strong> отдуда же &lt;a href="https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/">virtio-win&lt;/a>&lt;/p></description></item><item><title>Удаление строк bash</title><link>https://artyvr.ru/posts/remove_comm_lines_from_file/</link><pubDate>Sun, 20 Apr 2025 18:27:00 +0100</pubDate><guid>https://artyvr.ru/posts/remove_comm_lines_from_file/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>а ещё можно установить &lt;strong>virtio-win-guest-tools.exe&lt;/strong> от туда же &lt;a href="https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/">virtio-win&lt;/a>&lt;/p></description></item><item><title>Удаление строк bash</title><link>https://artyvr.ru/posts/remove_comm_lines_from_file/</link><pubDate>Sun, 20 Apr 2025 18:27:00 +0100</pubDate><guid>https://artyvr.ru/posts/remove_comm_lines_from_file/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cat /etc/apt/sources.list | grep &lt;span style="color:#e6db74">&amp;#34;^[^#*/;]&amp;#34;&lt;/span> &amp;gt; /etc/apt/sources.list.save
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>или&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>
@@ -287,20 +287,18 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo -e &lt;span style="color:#e6db74">&amp;#34;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">done&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Готовим свинину</title><link>https://artyvr.ru/posts/stewed_pork_belly/</link><pubDate>Thu, 27 Mar 2025 18:33:00 +0100</pubDate><guid>https://artyvr.ru/posts/stewed_pork_belly/</guid><description>&lt;p>Грудинку (сало с мясом прослойками) нарезал на куски где-то 5х5 9-10 штук,
-в кастрюлю сыпешь две сталовые ложки сахара, добовляешь чуть воды - эту смесь греешь на сильном огне до светло-коричневого цвета помешивая (карамелизуешь), затем отставляешь с огня,&lt;/p>
+в кастрюлю сыпешь две столовые ложки сахара, добавляешь чуть воды - эту смесь греешь на сильном огне до светло-коричневого цвета помешивая (карамелизуешь), затем отставляешь с огня,&lt;/p>
 &lt;p>На дно кастрюли с карамелизованным сахаром, укладываешь слоями:&lt;/p>
 &lt;ul>
-&lt;li>лук парей нарезаный - два стебля,&lt;/li>
-&lt;li>имбирь нарезаный (я тер на терке пластиками) - один корень,&lt;/li>
+&lt;li>лук парей нарезанный - два стебля,&lt;/li>
+&lt;li>имбирь нарезанный (я тер на терке пластиками) - один корень,&lt;/li>
 &lt;li>чеснок - много чеснока (я добавил три головки),&lt;/li>
-&lt;li>лук зеленый целиком - пучек,&lt;/li>
+&lt;li>лук зеленый целиком - пучёк,&lt;/li>
 &lt;li>две-три звездочки бадьяна (с этим главное не переборщить)&lt;/li>
 &lt;li>лимон.&lt;/li>
 &lt;/ul>
 &lt;p>Все на глаз &amp;hellip;&lt;/p></description></item><item><title>уведомления в Telegramm</title><link>https://artyvr.ru/posts/telegram_bot_notify/</link><pubDate>Mon, 27 Jan 2025 19:22:00 +0100</pubDate><guid>https://artyvr.ru/posts/telegram_bot_notify/</guid><description>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#!/bin/bash
 &lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Send notifications to Telegram Bot&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TELEGRAM_BOT_TOKEN&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;0123456789:qwertyuiopasdfghjklzxcvbnm&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>TELEGRAM_BOT_CHAT_ID&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;0123456789&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
