@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Letsencrypt on artyvr.ru</title><link>https://artyvr.ru/tags/letsencrypt/</link><description>Recent content in Letsencrypt on artyvr.ru</description><generator>Hugo</generator><language>ru-ru</language><lastBuildDate>Sun, 27 Apr 2025 19:00:00 +0100</lastBuildDate><atom:link href="https://artyvr.ru/tags/letsencrypt/index.xml" rel="self" type="application/rss+xml"/><item><title>Выпуск сертификата letsencrypt</title><link>https://artyvr.ru/posts/letsencrypt_cerbot/</link><pubDate>Sun, 27 Apr 2025 19:00:00 +0100</pubDate><guid>https://artyvr.ru/posts/letsencrypt_cerbot/</guid><description>&lt;h3 id="устанавливаем-certbot">Устанавливаем certbot&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt update
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt install certbot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="выпускаем-сертификат">Выпускаем сертификат&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo certbot certonly --standalone
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="проверяем-состояние-службы-certbot">Проверяем состояние службы certbot&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>systemctl status certbot
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Для всех манипуляции нужен реальный домен&amp;hellip;&lt;/p></description></item></channel></rss>
