@@ -1,4 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on artyvr.ru</title><link>https://artyvr.ru/posts/</link><description>Recent content in Posts on artyvr.ru</description><generator>Hugo</generator><language>ru-ru</language><lastBuildDate>Sun, 27 Jul 2025 19:00:00 +0100</lastBuildDate><atom:link href="https://artyvr.ru/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Выпуск сертификата letsencrypt</title><link>https://artyvr.ru/posts/letsencrypt_cerbot/</link><pubDate>Sun, 27 Jul 2025 19:00:00 +0100</pubDate><guid>https://artyvr.ru/posts/letsencrypt_cerbot/</guid><description>&lt;h3 id="устанавливаем-certbot">Устанавливаем certbot&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on artyvr.ru</title><link>https://artyvr.ru/posts/</link><description>Recent content in Posts on artyvr.ru</description><generator>Hugo</generator><language>ru-ru</language><lastBuildDate>Tue, 12 Aug 2025 18:15:00 +0100</lastBuildDate><atom:link href="https://artyvr.ru/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Проброс видеокарты в Proxmox</title><link>https://artyvr.ru/posts/proxmox_pci_passthrough/</link><pubDate>Tue, 12 Aug 2025 18:15:00 +0100</pubDate><guid>https://artyvr.ru/posts/proxmox_pci_passthrough/</guid><description>&lt;h2>&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano /etc/default/grub
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="для-intel">Для Intel&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>GRUB_CMDLINE_LINUX_DEFAULT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;quiet intel_iommu=on pt=on&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="для-amd">Для AMD&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>GRUB_CMDLINE_LINUX_DEFAULT&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;quiet amd_iommu=on pt=on&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="обновить-сонфигурацию-grub">Обновить сонфигурацию GRUB&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>update-grub
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="добавить-модули-ядра">Добавить модули ядра&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano /etc/modules
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="вставляем">Вставляем&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>vfio
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vfio_iommu_type1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vfio_pci
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>vfio_virqfd
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="обновить-образ-ядра">Обновить образ ядра&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>update-initramfs -u -k all
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="перезагружаемся">Перезагружаемся!!!&lt;/h2>
+&lt;h2 id="отключаем-использование-видеокарты-хостом">Отключаем использование видеокарты хостом&lt;/h2>
+&lt;h3 id="узнаем-id-устройства">Узнаем id устройства&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>lspci -nn | grep VGA
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Вывод команды&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 10:00.0 VGA compatible controller [0300]: NVIDIA Corporation NV44 [Quadro NVS 285] [10de:0165] (rev a1)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># копируем 10de:0165&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="далее">Далее&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano /etc/modprobe.d/vfio.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="указываем-скопированое-ранее">Указываем скопированое ранее&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>options vfio-pci ids&lt;span style="color:#f92672">=&lt;/span>10de:0165 disable_vga&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">1&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="вносим-драйвера-устройства-в-черный-список">Вносим драйвера устройства в черный список&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano /etc/modprobe.d/blacklist.conf 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="вставляем-1">Вставляем&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>blacklist radeon
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>blacklist nouveau
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>blacklist nvidia
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>blacklist nvidiafb
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>blacklist nvidia_drm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>blacklist i915
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="перезагружаемся-1">Перезагружаемся!!!&lt;/h2>
+&lt;h2 id="создаем-виртуальную-машину">Создаем виртуальную машину&lt;/h2>
+&lt;p>При создании виртуальной машины важно во вкладке System:&lt;/p></description></item><item><title>Выпуск сертификата letsencrypt</title><link>https://artyvr.ru/posts/letsencrypt_cerbot/</link><pubDate>Sun, 27 Jul 2025 19:00:00 +0100</pubDate><guid>https://artyvr.ru/posts/letsencrypt_cerbot/</guid><description>&lt;h3 id="устанавливаем-certbot">Устанавливаем certbot&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt update
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt install certbot
