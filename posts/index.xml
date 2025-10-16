@@ -2,6 +2,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bash -c &lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>curl -L https://github.com/XTLS/Xray-install/raw/main/install-release.sh&lt;span style="color:#66d9ef">)&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span> @ install
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Установка V2Ray&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Читаем https://v2raya.org/en/&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bash -c &lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#66d9ef">$(&lt;/span>curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh&lt;span style="color:#66d9ef">)&lt;/span>&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Установка Squid&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo apt update
@@ -21,13 +22,14 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Разрешения&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http_access allow local_net
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http_access deny all
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># а можно просто http_access allow all&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Перенаправление трафика через Xray порт узнаем из конфига V2Ray&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># раздел inbounds, port:xxxx&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cache_peer 127.0.0.1 parent &lt;span style="color:#ae81ff">1080&lt;/span> &lt;span style="color:#ae81ff">0&lt;/span> no-query default
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Перенаправление трафика через Xray порт узнаем из конфига V2Ray /etc/v2raya/config.json &lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># раздел inbounds, port:xxxxx&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cache_peer 127.0.0.1 parent xxxxx &lt;span style="color:#ae81ff">0&lt;/span> no-query default
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>never_direct allow all
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Логирование&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Логирование???&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>access_log /var/log/squid/access.log
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Проброс видеокарты в Proxmox</title><link>https://artyvr.ru/posts/proxmox_pci_passthrough/</link><pubDate>Tue, 12 Aug 2025 18:15:00 +0100</pubDate><guid>https://artyvr.ru/posts/proxmox_pci_passthrough/</guid><description>&lt;h2 id="включаем-iommu">Включаем iommu&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano /etc/default/grub
