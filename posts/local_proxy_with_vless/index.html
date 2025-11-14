@@ -8,7 +8,9 @@
 </span></span><span style=display:flex><span><span style=color:#75715e># Установка V2Ray</span>
 </span></span><span style=display:flex><span><span style=color:#75715e># Читаем https://v2raya.org/en/</span>
 </span></span><span style=display:flex><span>bash -c <span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>curl -L https://raw.githubusercontent.com/v2fly/fhs-install-v2ray/master/install-release.sh<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Установка Squid</span>
+</span></span></code></pre></div><p>Заходим http://ip-adress:2017
+Делаем импорт конфига, в меню Setting Transponent Proxy -> On: Do not Split Traffic -> Port Sharing
+В меню Address and Ports указываем нужные порты или оставляем как есть</p><p>Установка squid опционально, можно и без него</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Установка Squid</span>
 </span></span><span style=display:flex><span>sudo apt update
 </span></span><span style=display:flex><span>sudo apt install squid -y
 </span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>nano /etc/squid/squid.conf
