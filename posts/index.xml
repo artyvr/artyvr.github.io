@@ -1,4 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on artyvr.ru</title><link>https://artyvr.ru/posts/</link><description>Recent content in Posts on artyvr.ru</description><generator>Hugo</generator><language>ru-ru</language><lastBuildDate>Sat, 15 Nov 2025 20:16:01 +0100</lastBuildDate><atom:link href="https://artyvr.ru/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Virtiofs Proxmox</title><link>https://artyvr.ru/posts/virtiofs_proxmox/</link><pubDate>Sat, 15 Nov 2025 20:16:01 +0100</pubDate><guid>https://artyvr.ru/posts/virtiofs_proxmox/</guid><description>&lt;h2 id="создание-virtiofs-директорий-на-хосте">Создание virtiofs директорий на хосте&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on artyvr.ru</title><link>https://artyvr.ru/posts/</link><description>Recent content in Posts on artyvr.ru</description><generator>Hugo</generator><language>ru-ru</language><lastBuildDate>Sat, 06 Dec 2025 19:40:00 +0100</lastBuildDate><atom:link href="https://artyvr.ru/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Telegramm Bot notify</title><link>https://artyvr.ru/posts/telegram_notify/</link><pubDate>Sat, 06 Dec 2025 19:40:00 +0100</pubDate><guid>https://artyvr.ru/posts/telegram_notify/</guid><description>&lt;h3 id="создаем-бота-в-телеграм-через-botfather-запоминаем-token-бота">Создаем бота в телеграм через Botfather, запоминаем TOKEN бота&lt;/h3>
+&lt;h3 id="узнаем-чат-id">Узнаем чат ID&lt;/h3>
+&lt;ul>
+&lt;li>заходим на [https://api.telegram.org/bot&amp;lt;Токен вашего бота&amp;gt;/getUpdates](&lt;a href="https://api.telegram.org/bot">https://api.telegram.org/bot&lt;/a>&amp;lt;Токен вашего бота&amp;gt;/getUpdates)&lt;/li>
+&lt;li>в чат боте пишем любое сообщение&lt;/li>
+&lt;li>обновляем страницу [https://api.telegram.org/bot&amp;lt;Токен вашего бота&amp;gt;/getUpdates](&lt;a href="https://api.telegram.org/bot">https://api.telegram.org/bot&lt;/a>&amp;lt;Токен вашего бота&amp;gt;/getUpdates)&lt;/li>
+&lt;li>Находим:
+&lt;blockquote>
+&lt;p>&amp;hellip; &amp;ldquo;from&amp;rdquo;:{&amp;ldquo;id&amp;rdquo;: 1111111111 &amp;hellip;}&amp;hellip;&lt;/p>&lt;/blockquote>
+&lt;/li>
+&lt;/ul></description></item><item><title>Virtiofs Proxmox</title><link>https://artyvr.ru/posts/virtiofs_proxmox/</link><pubDate>Sat, 15 Nov 2025 20:16:01 +0100</pubDate><guid>https://artyvr.ru/posts/virtiofs_proxmox/</guid><description>&lt;h2 id="создание-virtiofs-директорий-на-хосте">Создание virtiofs директорий на хосте&lt;/h2>
 &lt;p>Datacenter -&amp;gt; Directory Mappings добавляем директории, указываем ID и путь до директорий на хосте&lt;/p>
 &lt;h2 id="монтируем-virtiofs-в-виртуальной-машине">Монтируем virtiofs в виртуальной машине&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano /etc/fstab
