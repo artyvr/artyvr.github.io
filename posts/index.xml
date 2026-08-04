@@ -1,12 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on artyvr.ru</title><link>https://artyvr.ru/posts/</link><description>Recent content in Posts on artyvr.ru</description><generator>Hugo</generator><language>ru-ru</language><lastBuildDate>Mon, 29 Jun 2026 18:00:00 +0100</lastBuildDate><atom:link href="https://artyvr.ru/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Установка archlinux</title><link>https://artyvr.ru/posts/archlinux_install/</link><pubDate>Mon, 29 Jun 2026 18:00:00 +0100</pubDate><guid>https://artyvr.ru/posts/archlinux_install/</guid><description>&lt;h3 id="при-ошибке-синхранизации-времени-time-synchronization-not-completing-while-you-wait-check-the-docs-for-workarounds">При ошибке синхранизации времени (time synchronization not completing while you wait check the docs for workarounds)&lt;/h3>
-&lt;p>Проблема актуальна на 30 июня 2026 г.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano /etc/systemd/timesyncd.conf
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Дописываем&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>NTP&lt;span style="color:#f92672">=&lt;/span>time.google.com
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Раскомментируем &lt;strong>Fallback_NTP&lt;/strong>
-Сохраняем файл&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>systemctl restart systemd-timesyncd
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>UPOS</title><link>https://artyvr.ru/posts/upos/</link><pubDate>Wed, 17 Jun 2026 18:03:00 +0100</pubDate><guid>https://artyvr.ru/posts/upos/</guid><description>&lt;h2 id="upos">UPOS&lt;/h2>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on artyvr.ru</title><link>https://artyvr.ru/posts/</link><description>Recent content in Posts on artyvr.ru</description><generator>Hugo</generator><language>ru-ru</language><lastBuildDate>Mon, 03 Aug 2026 10:03:00 +0100</lastBuildDate><atom:link href="https://artyvr.ru/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>UPOS</title><link>https://artyvr.ru/posts/upos/</link><pubDate>Mon, 03 Aug 2026 10:03:00 +0100</pubDate><guid>https://artyvr.ru/posts/upos/</guid><description>&lt;h2 id="upos">UPOS&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="https://artyvr.ru/upos/MTP_Device_Drivers.zip">https://artyvr.ru/upos/MTP_Device_Drivers.zip&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://artyvr.ru/upos/33.18.03.zip">https://artyvr.ru/upos/33.18.03.zip&lt;/a>&lt;/li>
@@ -17,6 +9,7 @@
 &lt;li>&lt;a href="https://artyvr.ru/upos/34.02.zip">https://artyvr.ru/upos/34.02.zip&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://artyvr.ru/upos/34.05.07.zip">https://artyvr.ru/upos/34.05.07.zip&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://artyvr.ru/upos/34.09.zip">https://artyvr.ru/upos/34.09.zip&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://artyvr.ru/upos/34.13.04.zip">https://artyvr.ru/upos/34.09.zip&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h3 id="вариант-для-терминала">Вариант для терминала:&lt;/h3>
 &lt;p>Для &lt;strong>linux&lt;/strong>&lt;/p>
@@ -27,6 +20,23 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl --output 33.18.03.zip https://artyvr.ru/upos/33.18.03.zip
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Для &lt;strong>Windows&lt;/strong>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-pwsh" data-lang="pwsh">&lt;span style="display:flex;">&lt;span>Invoke-WebRequest https&lt;span style="color:#960050;background-color:#1e0010">:&lt;/span>//artyvr.ru/upos/&lt;span style="color:#ae81ff">33.18&lt;/span>.03.zip -OutFile &lt;span style="color:#ae81ff">33.18&lt;/span>.03.zip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Proxy pac</title><link>https://artyvr.ru/posts/proxy_pac/</link><pubDate>Sat, 01 Aug 2026 09:03:00 +0100</pubDate><guid>https://artyvr.ru/posts/proxy_pac/</guid><description>&lt;h2 id="proxypac">proxy.pac&lt;/h2>
+&lt;p>Создаем файл &lt;strong>proxy.pac&lt;/strong> со следующим содержимым:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-javascript" data-lang="javascript">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">HTTP_PROXY&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;xxx.xxx.xxx.xxx:yyyy&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">var&lt;/span> &lt;span style="color:#a6e22e">SOCKS_PROXY&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#34;xxx.xxx.xxx.xxx:yyyy&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">FindProxyForURL&lt;/span>(&lt;span style="color:#a6e22e">url&lt;/span>, &lt;span style="color:#a6e22e">host&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> &lt;span style="color:#e6db74">&amp;#34;SOCKS5 &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">SOCKS_PROXY&lt;/span> ; &lt;span style="color:#e6db74">&amp;#34;PROXY &amp;#34;&lt;/span> &lt;span style="color:#f92672">+&lt;/span> &lt;span style="color:#a6e22e">HTTP_PROXY&lt;/span>; &lt;span style="color:#e6db74">&amp;#34;DIRECT&amp;#34;&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Установка archlinux</title><link>https://artyvr.ru/posts/archlinux_install/</link><pubDate>Mon, 29 Jun 2026 18:00:00 +0100</pubDate><guid>https://artyvr.ru/posts/archlinux_install/</guid><description>&lt;h3 id="при-ошибке-синхранизации-времени-time-synchronization-not-completing-while-you-wait-check-the-docs-for-workarounds">При ошибке синхранизации времени (time synchronization not completing while you wait check the docs for workarounds)&lt;/h3>
+&lt;p>Проблема актуальна на 30 июня 2026 г.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>nano /etc/systemd/timesyncd.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Дописываем&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>NTP&lt;span style="color:#f92672">=&lt;/span>time.google.com
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Раскомментируем &lt;strong>Fallback_NTP&lt;/strong>
+Сохраняем файл&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>systemctl restart systemd-timesyncd
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Telegramm Bot notify</title><link>https://artyvr.ru/posts/telegram_notify/</link><pubDate>Sat, 06 Dec 2025 19:40:00 +0100</pubDate><guid>https://artyvr.ru/posts/telegram_notify/</guid><description>&lt;h3 id="создаем-бота-в-телеграм-через-botfather-запоминаем-token-бота">Создаем бота в телеграм через Botfather, запоминаем TOKEN бота&lt;/h3>
 &lt;h3 id="узнаем-чат-id">Узнаем чат ID&lt;/h3>
 &lt;ul>
